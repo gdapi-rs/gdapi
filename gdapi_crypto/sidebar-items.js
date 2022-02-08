@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["common","Common methods for both encoding and decoding."],["decode","Methods to decode data."],["encode","Methods to encode data."],["error","The error type and all related types."]]});

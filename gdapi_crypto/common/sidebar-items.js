@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["xor","Applies the XOR cipher on a string."]]});
