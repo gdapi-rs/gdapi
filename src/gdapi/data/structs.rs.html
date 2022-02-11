@@ -69,6 +69,15 @@
 	<span class="kw">pub</span> <span class="ident">description</span>: <span class="ident">String</span>,
 }
 
+<span class="doccomment">/// Represents a partial user that you get when logging in.</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Clone</span>, <span class="ident">Copy</span>, <span class="ident">Debug</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">LoginUser</span> {
+	<span class="doccomment">/// The id of the user</span>
+	<span class="kw">pub</span> <span class="ident">id</span>: <span class="ident">u32</span>,
+	<span class="doccomment">/// The account id of the user</span>
+	<span class="kw">pub</span> <span class="ident">account_id</span>: <span class="ident">u32</span>,
+}
+
 <span class="doccomment">/// Represents a map pack.</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Clone</span>, <span class="ident">Debug</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">MapPack</span> {
@@ -78,15 +87,6 @@
 	<span class="kw">pub</span> <span class="ident">name</span>: <span class="ident">String</span>,
 	<span class="doccomment">/// The ids of the map pack levels</span>
 	<span class="kw">pub</span> <span class="ident">level_ids</span>: [<span class="ident">u32</span>; <span class="number">3</span>],
-}
-
-<span class="doccomment">/// Represents a partial user that you get when logging in.</span>
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Clone</span>, <span class="ident">Copy</span>, <span class="ident">Debug</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PartialUser</span> {
-	<span class="doccomment">/// The id of the logged in user</span>
-	<span class="kw">pub</span> <span class="ident">id</span>: <span class="ident">u32</span>,
-	<span class="doccomment">/// The account id of the logged in user</span>
-	<span class="kw">pub</span> <span class="ident">account_id</span>: <span class="ident">u32</span>,
 }
 
 <span class="doccomment">/// Represents a user.</span>
