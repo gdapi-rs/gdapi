@@ -1,1 +1,1 @@
-initSidebarItems({"mod":[["data","A collection of data structures returned by the API."],["error","The error type and all related types."]],"struct":[["Client","The client used to make requests."]]});
+initSidebarItems({"mod":[["client","An asynchronous client implementation."],["data","A collection of data structures returned by the API."],["error","The error type and all related types."]]});
