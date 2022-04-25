@@ -105,15 +105,7 @@
 <span id="98"> 98</span>
 <span id="99"> 99</span>
 <span id="100">100</span>
-<span id="101">101</span>
-<span id="102">102</span>
-<span id="103">103</span>
-<span id="104">104</span>
-<span id="105">105</span>
-<span id="106">106</span>
-<span id="107">107</span>
-<span id="108">108</span>
-</pre><pre class="rust"><code><span class="kw">use</span> <span class="ident"><span class="kw">crate</span>::data</span>::<span class="kw-2">*</span>;
+</pre><pre class="rust"><code><span class="kw">use</span> <span class="ident"><span class="kw">crate</span>::data</span>::{<span class="ident">Gauntlet</span>, <span class="ident">Level</span>, <span class="ident">LoginUser</span>, <span class="ident">MapPack</span>, <span class="ident">User</span>};
 <span class="kw">use</span> <span class="ident">gdapi_crypto::decode</span>;
 <span class="kw">use</span> <span class="ident">std::collections::HashMap</span>;
 
@@ -208,17 +200,9 @@
 	}
 }
 
-<span class="kw">impl</span><span class="op">&lt;</span><span class="ident">T</span>: <span class="ident">Identify</span> <span class="op">+</span> <span class="ident">Parse</span><span class="op">&gt;</span> <span class="ident">Parse</span> <span class="kw">for</span> <span class="ident">Map</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span> {
+<span class="kw">impl</span><span class="op">&lt;</span><span class="ident">T</span>: <span class="ident">Parse</span><span class="op">&gt;</span> <span class="ident">Parse</span> <span class="kw">for</span> <span class="ident">Vec</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span> {
 	<span class="kw">fn</span> <span class="ident">from_str</span>(<span class="ident">data</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>) -&gt; <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span> {
-		<span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">map</span> <span class="op">=</span> <span class="ident">Map::new</span>();
-
-		<span class="kw">for</span> <span class="ident">split</span> <span class="kw">in</span> <span class="ident">data</span>.<span class="ident">split_once</span>(<span class="string">&#39;#&#39;</span>)<span class="question-mark">?</span>.<span class="number">0</span>.<span class="ident">split</span>(<span class="string">&#39;|&#39;</span>) {
-			<span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="ident">parsed</span>) <span class="op">=</span> <span class="ident">T::from_str</span>(<span class="ident">split</span>) {
-				<span class="ident">map</span>.<span class="ident">insert</span>(<span class="ident">parsed</span>.<span class="ident">id</span>(), <span class="ident">parsed</span>);
-			}
-		}
-
-		<span class="prelude-val">Some</span>(<span class="ident">map</span>)
+		<span class="prelude-val">Some</span>(<span class="ident">data</span>.<span class="ident">split_once</span>(<span class="string">&#39;#&#39;</span>)<span class="question-mark">?</span>.<span class="number">0</span>.<span class="ident">split</span>(<span class="string">&#39;|&#39;</span>).<span class="ident">filter_map</span>(<span class="ident">T::from_str</span>).<span class="ident">collect</span>())
 	}
 }
 </code></pre></div>
