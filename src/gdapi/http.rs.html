@@ -74,6 +74,8 @@
 <span id="67">67</span>
 <span id="68">68</span>
 <span id="69">69</span>
+<span id="70">70</span>
+<span id="71">71</span>
 </pre><pre class="rust"><code><span class="kw">use</span> <span class="ident"><span class="kw">crate</span>::constants</span>;
 <span class="kw">use</span> <span class="ident"><span class="kw">crate</span>::error</span>::{<span class="ident">Error</span>, <span class="prelude-ty">Result</span>};
 <span class="kw">use</span> <span class="ident"><span class="kw">crate</span>::parse::Parse</span>;
@@ -90,6 +92,7 @@
 }
 
 <span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">Endpoint</span> {
+	<span class="ident">DeleteAccComment</span>,
 	<span class="ident">DownloadLevel</span>,
 	<span class="ident">GetGauntlets</span>,
 	<span class="ident">GetLevels</span>,
@@ -103,6 +106,7 @@
 <span class="kw">impl</span> <span class="ident">Display</span> <span class="kw">for</span> <span class="ident">Endpoint</span> {
 	<span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;mut</span> <span class="ident">Formatter</span><span class="op">&lt;</span><span class="lifetime">&#39;_</span><span class="op">&gt;</span>) -&gt; <span class="ident">FmtResult</span> {
 		<span class="kw">let</span> <span class="ident">endpoint</span> <span class="op">=</span> <span class="kw">match</span> <span class="self">self</span> {
+			<span class="ident">Endpoint::DeleteAccComment</span> =&gt; <span class="string">&quot;deleteGJAccComment20&quot;</span>,
 			<span class="ident">Endpoint::DownloadLevel</span> =&gt; <span class="string">&quot;downloadGJLevel22&quot;</span>,
 			<span class="ident">Endpoint::GetGauntlets</span> =&gt; <span class="string">&quot;getGJGauntlets21&quot;</span>,
 			<span class="ident">Endpoint::GetLevels</span> =&gt; <span class="string">&quot;getGJLevels21&quot;</span>,

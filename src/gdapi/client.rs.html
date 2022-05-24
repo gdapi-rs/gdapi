@@ -82,6 +82,14 @@
 <span id="75">75</span>
 <span id="76">76</span>
 <span id="77">77</span>
+<span id="78">78</span>
+<span id="79">79</span>
+<span id="80">80</span>
+<span id="81">81</span>
+<span id="82">82</span>
+<span id="83">83</span>
+<span id="84">84</span>
+<span id="85">85</span>
 </pre><pre class="rust"><code><span class="doccomment">//! An asynchronous client implementation.</span>
 
 <span class="kw">use</span> <span class="ident"><span class="kw">crate</span>::data</span>::{<span class="ident">Gauntlet</span>, <span class="ident">Level</span>, <span class="ident">LoginUser</span>, <span class="ident">MapPack</span>, <span class="ident">User</span>};
@@ -101,6 +109,14 @@
 	<span class="doccomment">/// Creates a new client.</span>
 	<span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() -&gt; <span class="self">Self</span> {
 		<span class="ident"><span class="self">Self</span>::default</span>()
+	}
+
+	<span class="doccomment">/// Deletes an account comment. Requires the client to be logged in.</span>
+	<span class="kw">pub</span> <span class="kw">async</span> <span class="kw">fn</span> <span class="ident">delete_account_comment</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">comment_id</span>: <span class="ident">u32</span>) -&gt; <span class="prelude-ty">Result</span><span class="op">&lt;</span>()<span class="op">&gt;</span> {
+		<span class="kw">let</span> <span class="ident">auth</span> <span class="op">=</span> <span class="self">self</span>.<span class="ident">http</span>.<span class="ident">auth</span>().<span class="ident">ok_or</span>(<span class="ident">Error::NotLoggedIn</span>)<span class="question-mark">?</span>;
+		<span class="kw">let</span> <span class="ident">form</span> <span class="op">=</span> <span class="ident">form::delete_account_comment</span>(<span class="ident">auth</span>.<span class="ident">account_id</span>, <span class="kw-2">&amp;</span><span class="ident">auth</span>.<span class="ident">gjp</span>, <span class="ident">comment_id</span>);
+
+		<span class="self">self</span>.<span class="ident">http</span>.<span class="ident">post</span>(<span class="ident">Endpoint::DeleteAccComment</span>, <span class="ident">form</span>).<span class="kw">await</span>
 	}
 
 	<span class="doccomment">/// Gets the levels of a gauntlet by its id.</span>
