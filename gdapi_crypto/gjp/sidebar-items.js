@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["decode","Decodes a GJP back into the account password."],["encode","Encodes an account password as the GJP."]]});

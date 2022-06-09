@@ -1,1 +1,1 @@
-initSidebarItems({"mod":[["common","Common methods for both encoding and decoding."],["decode","Methods to decode data."],["encode","Methods to encode data."],["error","The error type and all related types."]]});
+initSidebarItems({"mod":[["base64","Items related to base 64 encoding."],["error","The error type and all related types."],["gjp","Items related to the GJP."],["xor","Items related to the XOR cipher."]]});

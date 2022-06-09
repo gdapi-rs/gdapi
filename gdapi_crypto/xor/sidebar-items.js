@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["xor","Applies the XOR cipher on a string."]],"mod":[["keys","XOR keys used for specific parts of the game."]]});

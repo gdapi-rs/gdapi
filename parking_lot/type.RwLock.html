@@ -42,7 +42,7 @@ dropping the guard.</p>
 <li>No poisoning, the lock is released normally on panic.</li>
 <li>Only requires 1 word of space, whereas the standard library boxes the
 <code>RwLock</code> due to platform limitations.</li>
-<li>Can be statically constructed (requires the <code>const_fn</code> nightly feature).</li>
+<li>Can be statically constructed.</li>
 <li>Does not require any drop glue when dropped.</li>
 <li>Inline fast path for the uncontended case.</li>
 <li>Efficient handling of micro-contention using adaptive spinning.</li>
@@ -70,5 +70,5 @@ dropping the guard.</p>
     <span class="kw-2">*</span><span class="ident">w</span> <span class="op">+</span><span class="op">=</span> <span class="number">1</span>;
     <span class="macro">assert_eq!</span>(<span class="kw-2">*</span><span class="ident">w</span>, <span class="number">6</span>);
 } <span class="comment">// write lock is dropped here</span></code></pre></div>
-</div></details></section><section id="search" class="content hidden"></section></div></main><div id="rustdoc-vars" data-root-path="../" data-current-crate="parking_lot" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.60.0 (7737e0b5c 2022-04-04)" ></div>
+</div></details></section><section id="search" class="content hidden"></section></div></main><div id="rustdoc-vars" data-root-path="../" data-current-crate="parking_lot" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.61.0 (fe5b13d68 2022-05-18)" ></div>
 </body></html>
